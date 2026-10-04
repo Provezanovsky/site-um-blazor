@@ -1,0 +1,20 @@
+@page "/contador"
+@rendermode InteractiveServer
+
+<PageTitle>Contador de Cliques</PageTitle>
+<p class="eyebrow">Exercício 02 · Contador de Cliques</p>
+<h1 aria-live="polite">Número de cliques: @quantidade</h1>
+<p class="intro">Clique no botão para aumentar a quantidade em uma unidade.</p>
+
+<section class="exercise" aria-label="Contador de cliques">
+    <button type="button" @onclick="Incrementar">Clique Aqui</button>
+</section>
+
+@code {
+    private int quantidade = 0;
+
+    private void Incrementar()
+    {
+        quantidade++;
+    }
+}

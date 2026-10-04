@@ -1,0 +1,28 @@
+@page "/mensagem"
+@rendermode InteractiveServer
+
+<PageTitle>Alternador de Mensagem</PageTitle>
+<p class="eyebrow">Exercício 03</p>
+<h1>Alternador de Mensagem</h1>
+<p class="intro">Use o botão para alternar a visibilidade da mensagem.</p>
+
+<section class="exercise" aria-label="Alternador de mensagem">
+    <button type="button" @onclick="AlternarVisibilidade">
+        @(exibirMensagem ? "Ocultar Mensagem" : "Exibir Mensagem")
+    </button>
+    <div aria-live="polite">
+        @if (exibirMensagem)
+        {
+            <p class="result">Bem-vindo ao desenvolvimento web com .NET 10!</p>
+        }
+    </div>
+</section>
+
+@code {
+    private bool exibirMensagem = false;
+
+    private void AlternarVisibilidade()
+    {
+        exibirMensagem = !exibirMensagem;
+    }
+}
